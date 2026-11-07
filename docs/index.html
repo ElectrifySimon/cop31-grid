@@ -2,847 +2,591 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<title>Where Simon is, COP31</title>
-<meta name="description" content="Sessions and the Global Renewables Hub programme at COP31, Antalya, 9 to 20 November 2026.">
+<title>Simon Benmarraze &middot; COP31</title>
+<meta name="description" content="Where Simon Benmarraze is during COP31, Antalya, 9 to 20 November 2026. Session times, titles and rooms.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2312161c'/><text x='50' y='70' font-size='54' font-family='Helvetica,Arial' fill='%23ffffff' text-anchor='middle'>S</text></svg>">
 <style>
-:root{--paper:#fbfaf7;--ink:#12161c;--ink2:#3d444e;--faint:#6f7783;--line:#d9d5cc;
- --blue:#1f4e8c;--prog:#6f6444;--chip:#f1eee6;--max:760px}
-@media (prefers-color-scheme:dark){:root{--paper:#12151a;--ink:#eceae4;--ink2:#c3c0b8;--faint:#8d939c;
- --line:#2a2f37;--blue:#8fb6e8;--prog:#c9bd97;--chip:#1b2028}}
+:root{
+  --paper:#fcfbf8; --ink:#101419; --ink2:#3f4650; --faint:#767d88;
+  --line:#e2ded4; --line2:#cfcabd;
+  --now:#14603f; --next:#a35f10;
+  --card:#ffffff;
+  --shadow:0 1px 2px rgba(16,20,25,.05), 0 10px 26px -18px rgba(16,20,25,.32);
+  --max:720px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#0e1116;--ink:#f0eee8;--ink2:#c2c0b9;--faint:#8a9099;
+    --line:#232830;--line2:#2f3540;--now:#3fa87a;--next:#dd9d47;--card:#151a21;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 30px -20px rgba(0,0,0,.9);}
+}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--ink);
- font:16px/1.5 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
- font-variant-numeric:tabular-nums;padding:0 20px 64px}
+  font:16px/1.5 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  font-variant-numeric:tabular-nums;padding:0 18px calc(30px + env(safe-area-inset-bottom))}
 main{max-width:var(--max);margin:0 auto}
-header.top{padding:28px 0 14px;border-bottom:1.5px solid var(--ink)}
-.eyebrow{font:600 10px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
-h1{font-size:clamp(26px,7vw,40px);line-height:1.06;letter-spacing:-.02em;margin:12px 0 6px;font-weight:650}
-.sub{color:var(--ink2);font-size:15px;margin:0}
-.meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;font:600 10px/1 ui-sans-serif,system-ui,sans-serif;
- letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
-.live{margin:22px 0 8px;border:1.5px solid var(--ink);border-radius:2px;padding:14px 16px;display:grid;gap:10px}
-.live .k{font:700 9.5px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
-.live .v{font-weight:650;font-size:17px;line-height:1.25;margin-top:4px}
-.live .m{color:var(--ink2);font-size:13.5px;margin-top:3px}
-.live .idle .v{color:var(--ink2);font-weight:550}
-section.day{margin-top:34px}
-section.day h2{font:700 11px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;
- color:var(--faint);margin:0 0 8px}
-ul.rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.row{display:grid;grid-template-columns:54px 1fr auto;gap:14px;align-items:start;
- padding:12px 0;border-bottom:1px solid var(--line)}
-.tm{font:600 12.5px/1.25 ui-sans-serif,system-ui,sans-serif;color:var(--ink);white-space:nowrap}
-.tm b{display:block;font-weight:650}
-.tm i{display:block;font-style:normal;color:var(--faint);font-weight:500;font-size:11.5px}
-.dash{color:var(--faint);margin:0 2px}
-h3{margin:0;font-size:15px;line-height:1.32;font-weight:600;letter-spacing:-.005em}
-.loc{margin:3px 0 0;font-size:12.5px;color:var(--faint);line-height:1.35}
-.st{font:700 9px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;
- padding:5px 7px;border-radius:2px;background:var(--chip);color:var(--prog);white-space:nowrap;margin-top:2px}
-.st-confirmed{color:var(--blue)}
-.st-invited{color:var(--ink2)}
-footer{margin-top:40px;padding-top:14px;border-top:1.5px solid var(--ink);color:var(--faint);font-size:12px;line-height:1.6}
-@media (max-width:520px){
- .row{grid-template-columns:64px 1fr;gap:10px}
- .st{grid-column:2;justify-self:start;margin-top:6px}
+a{color:inherit}
+header{padding:26px 0 14px}
+.eyebrow{font:600 10px/1.2 ui-sans-serif,system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+h1{font-size:clamp(27px,7.2vw,42px);line-height:1.05;letter-spacing:-.025em;margin:11px 0 7px;font-weight:660}
+.sub{margin:0;color:var(--ink2);font-size:15.5px;line-height:1.4}
+.facts{display:flex;gap:7px;flex-wrap:wrap;margin-top:15px}
+.fact{font:600 9.5px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink2);border:1px solid var(--line2);border-radius:100px;padding:7px 11px;white-space:nowrap}
+
+.live{position:sticky;top:0;z-index:30;margin:14px 0 0;padding:8px 0;
+  background:var(--paper);
+  box-shadow:0 10px 18px -18px rgba(16,20,25,.5);
+  border-bottom:1px solid var(--line)}
+.strip{display:grid;grid-template-columns:1fr 1fr;gap:9px;max-width:var(--max);margin:0 auto}
+.cell{border-radius:13px;padding:11px 13px;display:flex;flex-direction:column;gap:4px;border:1px solid transparent;min-width:0}
+.cell .k{font:700 8.5px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.cell .v{font-weight:640;font-size:14.5px;line-height:1.3;letter-spacing:-.01em}
+.cell .m{font-size:11.5px;line-height:1.35}
+#nowCell{background:var(--now);color:#fff;box-shadow:var(--shadow)}
+#nowCell .k{color:rgba(255,255,255,.8)}
+#nowCell .m{color:rgba(255,255,255,.9)}
+#nowCell.idle{background:transparent;border-color:var(--line2);color:var(--ink2);box-shadow:none}
+#nowCell.idle .k{color:var(--faint)}
+#nowCell.idle .v{font-weight:560}
+#nextCell{border-color:color-mix(in srgb,var(--next) 55%,transparent);background:color-mix(in srgb,var(--next) 7%,transparent)}
+#nextCell .k{color:var(--next)}
+#nextCell .v{color:var(--ink)}
+#nextCell .m{color:var(--ink2)}
+
+section.day{margin-top:28px}
+section.day h2{position:sticky;top:104px;z-index:10;display:flex;align-items:baseline;justify-content:space-between;
+  gap:12px;margin:0;padding:7px 2px 8px;background:linear-gradient(var(--paper) 76%,transparent);
+  font:700 10.5px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.19em;text-transform:uppercase;color:var(--ink2)}
+section.day h2 em{font:600 9.5px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.12em;color:var(--faint);font-style:normal}
+ul.rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--line2)}
+.row{display:grid;grid-template-columns:56px 1fr;gap:13px;padding:13px 8px 13px 10px;
+  border-bottom:1px solid var(--line);border-left:3px solid transparent;border-radius:0 4px 4px 0}
+.tm b{display:block;font:660 13px/1.3 ui-sans-serif,system-ui,sans-serif}
+.tm i{display:block;font-style:normal;font-size:11.5px;color:var(--faint);line-height:1.3;min-height:15px}
+h3{margin:0;font-size:15px;line-height:1.33;font-weight:600;letter-spacing:-.005em}
+.loc{margin:4px 0 0;font-size:12.5px;color:var(--faint);line-height:1.35}
+.row.is-now{background:color-mix(in srgb,var(--now) 11%,transparent);border-left-color:var(--now)}
+.row.is-now .tm b{color:var(--now)}
+.row.is-next{background:color-mix(in srgb,var(--next) 8%,transparent);border-left-color:var(--next)}
+.row.is-next .tm b{color:var(--next)}
+.tag{display:inline-block;margin-left:7px;font:700 8.5px/1 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.16em;text-transform:uppercase;padding:3px 5px;border-radius:3px;vertical-align:2px;color:#fff}
+.row.is-now .tag{background:var(--now)}
+.row.is-next .tag{background:var(--next)}
+
+.contact{margin-top:34px;border:1px solid var(--line2);border-radius:16px;padding:16px;background:var(--card);box-shadow:var(--shadow)}
+.contact h2{margin:0 0 5px;font:700 9.5px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--faint)}
+.contact p{margin:0 0 13px;font-size:13.5px;color:var(--ink2);line-height:1.5}
+.contact p b{color:var(--ink);font-weight:640;font-variant-numeric:tabular-nums}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 14px;
+  border-radius:11px;text-decoration:none;font:640 13.5px/1 ui-sans-serif,system-ui,sans-serif;
+  border:1.5px solid var(--ink2);color:var(--ink);background:var(--card)}
+.btn.primary{background:var(--now);border-color:var(--now);color:#fff}
+.btn:active{transform:translateY(1px)}
+.btn svg{width:17px;height:17px;flex:none}
+footer{margin-top:24px;color:var(--faint);font-size:12px;line-height:1.6}
+footer b{color:var(--ink2);font-weight:600}
+@media (max-width:560px){
+  .strip{grid-template-columns:1fr}
+  section.day h2{top:186px}
+  .row{grid-template-columns:50px 1fr;gap:11px;padding-left:9px}
+  .actions{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media print{
+  .live,.contact{display:none}
+  body{background:#fff;color:#000;padding:0}
+  .row{break-inside:avoid}
 }
 </style>
 </head>
 <body>
 <main>
-<header class="top">
-  <div class="eyebrow">Simon Benmarraze &middot; IRENA</div>
-  <h1>Where I am at COP31</h1>
-  <p class="sub">Antalya, T&uuml;rkiye &middot; 9 to 20 November 2026</p>
-  <div class="meta"><span>All times UTC+3</span><span>Updated 7 Nov 2026, 14:41</span><span>54 sessions</span></div>
+<header>
+  <div class="eyebrow">IRENA &middot; IITC &middot; Strategic Infrastructure</div>
+  <h1>Simon Benmarraze</h1>
+  <p class="sub">Where I am at COP31, Antalya, 9 to 20 November 2026</p>
+  <div class="facts"><span class="fact">All times UTC+3</span><span class="fact">54 sessions</span><span class="fact">Updated 7 Nov 2026, 14:50</span></div>
 </header>
 
-<section class="live" id="live" aria-live="polite">
-  <div id="now" class="idle"><div class="k">Now</div><div class="v" id="nowV">No session running</div><div class="m" id="nowM"></div></div>
-  <div id="next"><div class="k">Next</div><div class="v" id="nextV">-</div><div class="m" id="nextM"></div></div>
-</section>
+<div class="live">
+  <div class="strip">
+    <div class="cell idle" id="nowCell">
+      <span class="k">Now</span>
+      <span class="v" id="nowV">No session running</span>
+      <span class="m" id="nowM"></span>
+    </div>
+    <div class="cell" id="nextCell">
+      <span class="k">Next</span>
+      <span class="v" id="nextV">&nbsp;</span>
+      <span class="m" id="nextM"></span>
+    </div>
+  </div>
+</div>
 
-<section class="day" data-date="2026-11-09">
-  <h2>Mon 9 Nov</h2>
-  <ul class="rows">
-    <li class="row">
-  <div class="tm"><b>12:00</b><i>13:00</i></div>
-  <div class="body"><h3>Official inauguration and opening ceremony of the Global Renewables Hub</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-programme">Programme</div>
-</li>
-<li class="row">
-  <div class="tm"><b>15:00</b><i>16:30</i></div>
-  <div class="body"><h3>Beyond carbon credits. What makes nature markets credible, investable and fair?</h3><p class="loc">Blue Zone, Side Event Room 6 (Katip Celebi)</p></div>
-  <div class="st st-invited">Invited</div>
-</li>
-<li class="row">
-  <div class="tm"><b>16:30</b><i>17:30</i></div>
-  <div class="body"><h3>Unlocking the decade of electrification: end-use transformation and digitalisation, insights from WETO 2026</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-programme">Programme</div>
-</li>
-  </ul>
-</section><section class="day" data-date="2026-11-10">
-  <h2>Tue 10 Nov</h2>
-  <ul class="rows">
-    <li class="row">
-  <div class="tm"><b>08:00</b><i>09:30</i></div>
-  <div class="body"><h3>The Age of Electricity: transitioning energy, industry and transport</h3><p class="loc">Special Event Room 4 - Perge</p></div>
-  <div class="st st-confirmed">Confirmed</div>
-</li>
-<li class="row">
-  <div class="tm"><b>09:00</b><i>10:00</i></div>
-  <div class="body"><h3>Transforming the power sector by 2030: unlocking power system flexibility, grids for a resilient energy transition</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-programme">Programme</div>
-</li>
-<li class="row">
-  <div class="tm"><b>10:00</b><i>11:30</i></div>
-  <div class="body"><h3>Scaling up adaptation and resilience implementation: success stories and lessons</h3><p class="loc">Blue Zone, Business Pavilion, ANFAS Antalya Expo Center</p></div>
-  <div class="st st-invited">Invited</div>
-</li>
-<li class="row">
-  <div class="tm"><b>10:30</b><i>11:30</i></div>
-  <div class="body"><h3>Global Offshore Wind Alliance Global Stocktake</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-confirmed">Confirmed</div>
-</li>
-<li class="row">
-  <div class="tm"><b>11:00</b><i>11:50</i></div>
-  <div class="body"><h3>Deploying renewable energy in emerging economies: a place-based approach</h3><p class="loc">Blue Zone, All In Pavilion</p></div>
-  <div class="st st-invited">Invited</div>
-</li>
-<li class="row">
-  <div class="tm"><b>11:30</b><i>13:00</i></div>
-  <div class="body"><h3>Accelerating decarbonisation: strategic and regulatory levers, support mechanisms and partnerships</h3><p class="loc">Blue Zone, Morocco Pavilion</p></div>
-  <div class="st st-invited">Invited</div>
-</li>
-<li class="row">
-  <div class="tm"><b>12:00</b><i>13:00</i></div>
-  <div class="body"><h3>Powering the decade of electrification: renewable supply, grids and system flexibility, insights from WETO 2026</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-programme">Programme</div>
-</li>
-<li class="row">
-  <div class="tm"><b>13:00</b><i>14:00</i></div>
-  <div class="body"><h3>Saving the vanishing coast</h3><p class="loc">Blue Zone, Nigeria Pavilion, Antalya EXPO Center</p></div>
-  <div class="st st-invited">Invited</div>
-</li>
-<li class="row">
-  <div class="tm"><b>13:00</b><i>15:00</i></div>
-  <div class="body"><h3>Catalysing investment for mitigation action: connecting ideas, action and investment</h3><p class="loc">Special Event Room 6 (SPE 6)</p></div>
-  <div class="st st-invited">Invited</div>
-</li>
-<li class="row">
-  <div class="tm"><b>13:30</b><i>15:00</i></div>
-  <div class="body"><h3>Enabling transformation: how to build the power systems for an electrifying world</h3><p class="loc">Blue Zone, IETA Pavilion</p></div>
-  <div class="st st-invited">Invited</div>
-</li>
-<li class="row">
-  <div class="tm"><b>14:30</b><i>16:00</i></div>
-  <div class="body"><h3>The changing climate reality: adapting and thriving amid disruption</h3><p class="loc">Venue on request</p></div>
-  <div class="st st-invited">Invited</div>
-</li>
-<li class="row">
-  <div class="tm"><b>16:00</b><i>16:45</i></div>
-  <div class="body"><h3>D-Grids: interconnection, distribution grids, climate finance and the COP31 D-Grid Initiative</h3><p class="loc">Blue Zone, Turkish Pavilion, Hall 1</p></div>
-  <div class="st st-invited">Invited</div>
-</li>
-<li class="row">
-  <div class="tm"><b>16:00</b><i>17:00</i></div>
-  <div class="body"><h3>The infrastructure imperative: building the systems behind clean energy</h3><p class="loc">UNFCCC Pavilion, Blue Zone</p></div>
-  <div class="st st-confirmed">Confirmed</div>
-</li>
-<li class="row">
-  <div class="tm"><b>18:00</b><i>23:00</i></div>
-  <div class="body"><h3>Annual COP reception, renewables-based electrification</h3><p class="loc">Venue on request</p></div>
-  <div class="st st-invited">Invited</div>
-</li>
-<li class="row">
-  <div class="tm"><b>19:00</b><i>21:30</i></div>
-  <div class="body"><h3>Powering prosperity: energy systems for resilient economies</h3><p class="loc">Venue on request</p></div>
-  <div class="st st-invited">Invited</div>
-</li>
-  </ul>
-</section><section class="day" data-date="2026-11-11">
-  <h2>Wed 11 Nov</h2>
-  <ul class="rows">
-    <li class="row">
-  <div class="tm"><b>12:00</b><i>13:30</i></div>
-  <div class="body"><h3>Axis 1 Synthesis Roundtable: driving the transition across energy, industry and transport</h3><p class="loc">Blue Zone, Special Event Room 1, Uzungol</p></div>
-  <div class="st st-confirmed">Confirmed</div>
-</li>
-<li class="row">
-  <div class="tm"><b>12:00</b><i>13:00</i></div>
-  <div class="body"><h3>Future-proofing grids for a renewable energy future</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-programme">Programme</div>
-</li>
-<li class="row">
-  <div class="tm"><b>13:30</b><i>14:30</i></div>
-  <div class="body"><h3>From megawatts to mega-flexibility: rethinking power for a renewable world</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-programme">Programme</div>
-</li>
-<li class="row">
-  <div class="tm"><b>14:00</b><i>15:00</i></div>
-  <div class="body"><h3>IEA special session on energy and AI, launch of the updated Energy and AI Observatory</h3><p class="loc">Blue Zone, IEA Pavilion, Stand A235</p></div>
-  <div class="st st-invited">Invited</div>
-</li>
-<li class="row">
-  <div class="tm"><b>15:00</b><i>16:15</i></div>
-  <div class="body"><h3>From Data to Delivery: Strengthening Country Capacity for Climate Implementation</h3><p class="loc">not in mail, Room to be confirmed</p></div>
-  <div class="st st-invited">Invited</div>
-</li>
-<li class="row">
-  <div class="tm"><b>15:00</b><i>16:00</i></div>
-  <div class="body"><h3>Powering electrification: hydropower for energy, water and resilience</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-programme">Programme</div>
-</li>
-  </ul>
-</section><section class="day" data-date="2026-11-12">
-  <h2>Thu 12 Nov</h2>
-  <ul class="rows">
-    <li class="row">
-  <div class="tm"><b>10:30</b><i>11:30</i></div>
-  <div class="body"><h3>Pacific leadership in the renewables revolution: advancing a 100% renewable Blue Pacific through investment and partnership</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-programme">Programme</div>
-</li>
-<li class="row">
-  <div class="tm"><b>15:00</b><i>16:00</i></div>
-  <div class="body"><h3>High-level dialogue on electrification: turning policy ambition into real-world impact</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-programme">Programme</div>
-</li>
-<li class="row">
-  <div class="tm"><b>16:30</b><i>17:30</i></div>
-  <div class="body"><h3>The IMO net-zero framework: securing a future for green fuels in global shipping</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-programme">Programme</div>
-</li>
-<li class="row">
-  <div class="tm"><b>tbc</b><i>tbc</i></div>
-  <div class="body"><h3>Roundtable on unlocking finance for electrified freight corridors</h3><p class="loc">not in mail, Room to be confirmed</p></div>
-  <div class="st st-invited">Invited</div>
-</li>
-  </ul>
-</section><section class="day" data-date="2026-11-13">
-  <h2>Fri 13 Nov</h2>
-  <ul class="rows">
-    <li class="row">
-  <div class="tm"><b>14:30</b><i>16:00</i></div>
-  <div class="body"><h3>Scaling the energy transition through NDC 3.0 implementation and long-term low emission strategies</h3><p class="loc">Blue Zone, French Pavilion</p></div>
-  <div class="st st-confirmed">Confirmed</div>
-</li>
-<li class="row">
-  <div class="tm"><b>15:00</b><i>16:00</i></div>
-  <div class="body"><h3>Launch of the Article 6 Network and the State of the Article 6 Carbon Market report</h3><p class="loc">Blue Zone, Coalition for Rainforest Nations pavilion</p></div>
-  <div class="st st-invited">Invited</div>
-</li>
-<li class="row">
-  <div class="tm"><b>16:30</b><i>17:30</i></div>
-  <div class="body"><h3>GWEC flagship event: powering the future begins with wind</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-programme">Programme</div>
-</li>
-<li class="row">
-  <div class="tm"><b>18:00</b><i>20:00</i></div>
-  <div class="body"><h3>GWEC Pavilion reception</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-programme">Programme</div>
-</li>
-  </ul>
-</section><section class="day" data-date="2026-11-14">
-  <h2>Sat 14 Nov</h2>
-  <ul class="rows">
-    <li class="row">
-  <div class="tm"><b>08:30</b><i>10:30</i></div>
-  <div class="body"><h3>BMUKN electrification event, Action Agenda progress and business perspectives</h3><p class="loc">Venue on request</p></div>
-  <div class="st st-invited">Invited</div>
-</li>
-<li class="row">
-  <div class="tm"><b>10:30</b><i>11:30</i></div>
-  <div class="body"><h3>K-GX: from ambition to industrial transformation</h3><p class="loc">Blue Zone, Korea Pavilion</p></div>
-  <div class="st st-confirmed">Confirmed</div>
-</li>
-<li class="row">
-  <div class="tm"><b>10:30</b><i>11:30</i></div>
-  <div class="body"><h3>Building the new power system: solutions and practices in grids, hydropower and energy storage</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-confirmed">Confirmed</div>
-</li>
-<li class="row">
-  <div class="tm"><b>12:30</b><i>13:15</i></div>
-  <div class="body"><h3>The Human Supply Chain for a Renewable Future: Recognising Renewable Energy Skills</h3><p class="loc">Energy and Transportation Hub, Green Zone</p></div>
-  <div class="st st-confirmed">Confirmed</div>
-</li>
-<li class="row">
-  <div class="tm"><b>14:00</b><i>15:00</i></div>
-  <div class="body"><h3>Scaling up offshore wind in Korea: policy priorities and partnerships</h3><p class="loc">Blue Zone, Korea Pavilion</p></div>
-  <div class="st st-confirmed">Confirmed</div>
-</li>
-<li class="row">
-  <div class="tm"><b>16:30</b><i>17:30</i></div>
-  <div class="body"><h3>24/7 renewables</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-programme">Programme</div>
-</li>
-<li class="row">
-  <div class="tm"><b>16:45</b><i>18:15</i></div>
-  <div class="body"><h3>Electrification: from the 35 by 35 pledge to implementation</h3><p class="loc">Blue Zone, Side Event Room 6, Katip Celebi</p></div>
-  <div class="st st-invited">Invited</div>
-</li>
-<li class="row">
-  <div class="tm"><b>18:00</b><i>20:00</i></div>
-  <div class="body"><h3>GRA Pavilion reception</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-programme">Programme</div>
-</li>
-  </ul>
-</section><section class="day" data-date="2026-11-16">
-  <h2>Mon 16 Nov</h2>
-  <ul class="rows">
-    <li class="row">
-  <div class="tm"><b>11:30</b><i>13:00</i></div>
-  <div class="body"><h3>Joint event at the Italy Pavilion</h3><p class="loc">Blue Zone, Italy Pavilion</p></div>
-  <div class="st st-confirmed">Confirmed</div>
-</li>
-<li class="row">
-  <div class="tm"><b>12:00</b><i>13:00</i></div>
-  <div class="body"><h3>Renewable energy for AI: green data centres for the twin transition</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-programme">Programme</div>
-</li>
-<li class="row">
-  <div class="tm"><b>16:30</b><i>17:30</i></div>
-  <div class="body"><h3>Electrification across the Mediterranean: T-MED as the delivery instrument of the Pact for the Mediterranean</h3><p class="loc">Blue Zone, Global Renewables Hub</p></div>
-  <div class="st st-confirmed">Confirmed</div>
-</li>
-  </ul>
-</section><section class="day" data-date="2026-11-17">
-  <h2>Tue 17 Nov</h2>
-  <ul class="rows">
-    <li class="row">
-  <div class="tm"><b>10:30</b><i>11:30</i></div>
-  <div class="body"><h3>Delivering offshore wind at scale: ambition, action and ocean stewardship</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-confirmed">Confirmed</div>
-</li>
-<li class="row">
-  <div class="tm"><b>13:30</b><i>14:30</i></div>
-  <div class="body"><h3>Beyond 10 GW: accelerating the next phase of the SIDS energy transition</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-programme">Programme</div>
-</li>
-<li class="row">
-  <div class="tm"><b>15:00</b><i>16:00</i></div>
-  <div class="body"><h3>Mobilising climate finance for energy access: from national plans and pledges to bankable projects</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-confirmed">Confirmed</div>
-</li>
-<li class="row">
-  <div class="tm"><b>16:30</b><i>17:30</i></div>
-  <div class="body"><h3>Wired for Growth: electrifying Africa&#x27;s transport through policy, corridors and infrastructure</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-confirmed">Confirmed</div>
-</li>
-<li class="row">
-  <div class="tm"><b>18:00</b><i>20:00</i></div>
-  <div class="body"><h3>Wired for Growth reception: electrifying Africa&#x27;s transport</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-confirmed">Confirmed</div>
-</li>
-  </ul>
-</section><section class="day" data-date="2026-11-18">
-  <h2>Wed 18 Nov</h2>
-  <ul class="rows">
-    <li class="row">
-  <div class="tm"><b>14:30</b><i>15:30</i></div>
-  <div class="body"><h3>L&#x27;IA au service de l&#x27;action climatique</h3><p class="loc">not in mail, Senegal Pavilion</p></div>
-  <div class="st st-invited">Invited</div>
-</li>
-<li class="row">
-  <div class="tm"><b>16:30</b><i>17:30</i></div>
-  <div class="body"><h3>Regional Electrification Day</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-programme">Programme</div>
-</li>
-<li class="row">
-  <div class="tm"><b>16:45</b><i>18:15</i></div>
-  <div class="body"><h3>Official UNFCCC side event: implementing D-Grids</h3><p class="loc">Blue Zone, Room to be confirmed</p></div>
-  <div class="st st-confirmed">Confirmed</div>
-</li>
-<li class="row">
-  <div class="tm"><b>18:00</b><i>20:00</i></div>
-  <div class="body"><h3>Regional Electrification Day reception</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-programme">Programme</div>
-</li>
-  </ul>
-</section><section class="day" data-date="2026-11-19">
-  <h2>Thu 19 Nov</h2>
-  <ul class="rows">
-    <li class="row">
-  <div class="tm"><b>10:30</b><i>11:30</i></div>
-  <div class="body"><h3>From pledge to connection: how flexible distribution grids set the pace of electrification</h3><p class="loc">Global Renewables Hub</p></div>
-  <div class="st st-confirmed">Confirmed</div>
-</li>
-<li class="row">
-  <div class="tm"><b>tbc</b><i>tbc</i></div>
-  <div class="body"><h3>D-Grids event at the IRENA Pavilion</h3><p class="loc">Blue Zone, IRENA Pavilion</p></div>
-  <div class="st st-invited">Invited</div>
-</li>
-  </ul>
+<section class="day" data-date="2026-11-09"><h2><span>MON 9 NOV</span><em>3 sessions</em></h2><ul class="rows"><li class="row" data-date="2026-11-09" data-start="12:00" data-end="13:00"><div class="tm"><b>12:00</b><i>13:00</i></div><div class="body"><h3>Official inauguration and opening ceremony of the Global Renewables Hub</h3><p class="loc">Global Renewables Hub</p></div></li><li class="row" data-date="2026-11-09" data-start="15:00" data-end="16:30"><div class="tm"><b>15:00</b><i>16:30</i></div><div class="body"><h3>Beyond carbon credits. What makes nature markets credible, investable and fair?</h3><p class="loc">Blue Zone, Side Event Room 6 (Katip Celebi)</p></div></li><li class="row" data-date="2026-11-09" data-start="16:30" data-end="17:30"><div class="tm"><b>16:30</b><i>17:30</i></div><div class="body"><h3>Unlocking the decade of electrification: end-use transformation and digitalisation, insights from WETO 2026</h3><p class="loc">Global Renewables Hub</p></div></li></ul></section><section class="day" data-date="2026-11-10"><h2><span>TUE 10 NOV</span><em>15 sessions</em></h2><ul class="rows"><li class="row" data-date="2026-11-10" data-start="08:00" data-end="09:30"><div class="tm"><b>08:00</b><i>09:30</i></div><div class="body"><h3>The Age of Electricity: transitioning energy, industry and transport</h3><p class="loc">Special Event Room 4 - Perge</p></div></li><li class="row" data-date="2026-11-10" data-start="09:00" data-end="10:00"><div class="tm"><b>09:00</b><i>10:00</i></div><div class="body"><h3>Transforming the power sector by 2030: unlocking power system flexibility, grids for a resilient energy transition</h3><p class="loc">Global Renewables Hub</p></div></li><li class="row" data-date="2026-11-10" data-start="10:00" data-end="11:30"><div class="tm"><b>10:00</b><i>11:30</i></div><div class="body"><h3>Scaling up adaptation and resilience implementation: success stories and lessons</h3><p class="loc">Blue Zone, Business Pavilion, ANFAS Antalya Expo Center</p></div></li><li class="row" data-date="2026-11-10" data-start="10:30" data-end="11:30"><div class="tm"><b>10:30</b><i>11:30</i></div><div class="body"><h3>Global Offshore Wind Alliance Global Stocktake</h3><p class="loc">Global Renewables Hub</p></div></li><li class="row" data-date="2026-11-10" data-start="11:00" data-end="11:50"><div class="tm"><b>11:00</b><i>11:50</i></div><div class="body"><h3>Deploying renewable energy in emerging economies: a place-based approach</h3><p class="loc">Blue Zone, All In Pavilion</p></div></li><li class="row" data-date="2026-11-10" data-start="11:30" data-end="13:00"><div class="tm"><b>11:30</b><i>13:00</i></div><div class="body"><h3>Accelerating decarbonisation: strategic and regulatory levers, support mechanisms and partnerships</h3><p class="loc">Blue Zone, Morocco Pavilion</p></div></li><li class="row" data-date="2026-11-10" data-start="12:00" data-end="13:00"><div class="tm"><b>12:00</b><i>13:00</i></div><div class="body"><h3>Powering the decade of electrification: renewable supply, grids and system flexibility, insights from WETO 2026</h3><p class="loc">Global Renewables Hub</p></div></li><li class="row" data-date="2026-11-10" data-start="13:00" data-end="14:00"><div class="tm"><b>13:00</b><i>14:00</i></div><div class="body"><h3>Saving the vanishing coast</h3><p class="loc">Blue Zone, Nigeria Pavilion, Antalya EXPO Center</p></div></li><li class="row" data-date="2026-11-10" data-start="13:00" data-end="15:00"><div class="tm"><b>13:00</b><i>15:00</i></div><div class="body"><h3>Catalysing investment for mitigation action: connecting ideas, action and investment</h3><p class="loc">Special Event Room 6 (SPE 6)</p></div></li><li class="row" data-date="2026-11-10" data-start="13:30" data-end="15:00"><div class="tm"><b>13:30</b><i>15:00</i></div><div class="body"><h3>Enabling transformation: how to build the power systems for an electrifying world</h3><p class="loc">Blue Zone, IETA Pavilion</p></div></li><li class="row" data-date="2026-11-10" data-start="14:30" data-end="16:00"><div class="tm"><b>14:30</b><i>16:00</i></div><div class="body"><h3>The changing climate reality: adapting and thriving amid disruption</h3><p class="loc">Venue on request</p></div></li><li class="row" data-date="2026-11-10" data-start="16:00" data-end="16:45"><div class="tm"><b>16:00</b><i>16:45</i></div><div class="body"><h3>D-Grids: interconnection, distribution grids, climate finance and the COP31 D-Grid Initiative</h3><p class="loc">Blue Zone, Turkish Pavilion, Hall 1</p></div></li><li class="row" data-date="2026-11-10" data-start="16:00" data-end="17:00"><div class="tm"><b>16:00</b><i>17:00</i></div><div class="body"><h3>The infrastructure imperative: building the systems behind clean energy</h3><p class="loc">UNFCCC Pavilion, Blue Zone</p></div></li><li class="row" data-date="2026-11-10" data-start="18:00" data-end="23:00"><div class="tm"><b>18:00</b><i>23:00</i></div><div class="body"><h3>Annual COP reception, renewables-based electrification</h3><p class="loc">Venue on request</p></div></li><li class="row" data-date="2026-11-10" data-start="19:00" data-end="21:30"><div class="tm"><b>19:00</b><i>21:30</i></div><div class="body"><h3>Powering prosperity: energy systems for resilient economies</h3><p class="loc">Venue on request</p></div></li></ul></section><section class="day" data-date="2026-11-11"><h2><span>WED 11 NOV</span><em>6 sessions</em></h2><ul class="rows"><li class="row" data-date="2026-11-11" data-start="12:00" data-end="13:30"><div class="tm"><b>12:00</b><i>13:30</i></div><div class="body"><h3>Axis 1 Synthesis Roundtable: driving the transition across energy, industry and transport</h3><p class="loc">Blue Zone, Special Event Room 1, Uzungol</p></div></li><li class="row" data-date="2026-11-11" data-start="12:00" data-end="13:00"><div class="tm"><b>12:00</b><i>13:00</i></div><div class="body"><h3>Future-proofing grids for a renewable energy future</h3><p class="loc">Global Renewables Hub</p></div></li><li class="row" data-date="2026-11-11" data-start="13:30" data-end="14:30"><div class="tm"><b>13:30</b><i>14:30</i></div><div class="body"><h3>From megawatts to mega-flexibility: rethinking power for a renewable world</h3><p class="loc">Global Renewables Hub</p></div></li><li class="row" data-date="2026-11-11" data-start="14:00" data-end="15:00"><div class="tm"><b>14:00</b><i>15:00</i></div><div class="body"><h3>IEA special session on energy and AI, launch of the updated Energy and AI Observatory</h3><p class="loc">Blue Zone, IEA Pavilion, Stand A235</p></div></li><li class="row" data-date="2026-11-11" data-start="15:00" data-end="16:15"><div class="tm"><b>15:00</b><i>16:15</i></div><div class="body"><h3>From Data to Delivery: Strengthening Country Capacity for Climate Implementation</h3><p class="loc">not in mail, Room to be confirmed</p></div></li><li class="row" data-date="2026-11-11" data-start="15:00" data-end="16:00"><div class="tm"><b>15:00</b><i>16:00</i></div><div class="body"><h3>Powering electrification: hydropower for energy, water and resilience</h3><p class="loc">Global Renewables Hub</p></div></li></ul></section><section class="day" data-date="2026-11-12"><h2><span>THU 12 NOV</span><em>4 sessions</em></h2><ul class="rows"><li class="row" data-date="2026-11-12" data-start="10:30" data-end="11:30"><div class="tm"><b>10:30</b><i>11:30</i></div><div class="body"><h3>Pacific leadership in the renewables revolution: advancing a 100% renewable Blue Pacific through investment and partnership</h3><p class="loc">Global Renewables Hub</p></div></li><li class="row" data-date="2026-11-12" data-start="15:00" data-end="16:00"><div class="tm"><b>15:00</b><i>16:00</i></div><div class="body"><h3>High-level dialogue on electrification: turning policy ambition into real-world impact</h3><p class="loc">Global Renewables Hub</p></div></li><li class="row" data-date="2026-11-12" data-start="16:30" data-end="17:30"><div class="tm"><b>16:30</b><i>17:30</i></div><div class="body"><h3>The IMO net-zero framework: securing a future for green fuels in global shipping</h3><p class="loc">Global Renewables Hub</p></div></li><li class="row" data-date="2026-11-12" data-start="tbc" data-end="tbc"><div class="tm"><b>tbc</b><i></i></div><div class="body"><h3>Roundtable on unlocking finance for electrified freight corridors</h3><p class="loc">not in mail, Room to be confirmed</p></div></li></ul></section><section class="day" data-date="2026-11-13"><h2><span>FRI 13 NOV</span><em>4 sessions</em></h2><ul class="rows"><li class="row" data-date="2026-11-13" data-start="14:30" data-end="16:00"><div class="tm"><b>14:30</b><i>16:00</i></div><div class="body"><h3>Scaling the energy transition through NDC 3.0 implementation and long-term low emission strategies</h3><p class="loc">Blue Zone, French Pavilion</p></div></li><li class="row" data-date="2026-11-13" data-start="15:00" data-end="16:00"><div class="tm"><b>15:00</b><i>16:00</i></div><div class="body"><h3>Launch of the Article 6 Network and the State of the Article 6 Carbon Market report</h3><p class="loc">Blue Zone, Coalition for Rainforest Nations pavilion</p></div></li><li class="row" data-date="2026-11-13" data-start="16:30" data-end="17:30"><div class="tm"><b>16:30</b><i>17:30</i></div><div class="body"><h3>GWEC flagship event: powering the future begins with wind</h3><p class="loc">Global Renewables Hub</p></div></li><li class="row" data-date="2026-11-13" data-start="18:00" data-end="20:00"><div class="tm"><b>18:00</b><i>20:00</i></div><div class="body"><h3>GWEC Pavilion reception</h3><p class="loc">Global Renewables Hub</p></div></li></ul></section><section class="day" data-date="2026-11-14"><h2><span>SAT 14 NOV</span><em>8 sessions</em></h2><ul class="rows"><li class="row" data-date="2026-11-14" data-start="08:30" data-end="10:30"><div class="tm"><b>08:30</b><i>10:30</i></div><div class="body"><h3>BMUKN electrification event, Action Agenda progress and business perspectives</h3><p class="loc">Venue on request</p></div></li><li class="row" data-date="2026-11-14" data-start="10:30" data-end="11:30"><div class="tm"><b>10:30</b><i>11:30</i></div><div class="body"><h3>K-GX: from ambition to industrial transformation</h3><p class="loc">Blue Zone, Korea Pavilion</p></div></li><li class="row" data-date="2026-11-14" data-start="10:30" data-end="11:30"><div class="tm"><b>10:30</b><i>11:30</i></div><div class="body"><h3>Building the new power system: solutions and practices in grids, hydropower and energy storage</h3><p class="loc">Global Renewables Hub</p></div></li><li class="row" data-date="2026-11-14" data-start="12:30" data-end="13:15"><div class="tm"><b>12:30</b><i>13:15</i></div><div class="body"><h3>The Human Supply Chain for a Renewable Future: Recognising Renewable Energy Skills</h3><p class="loc">Energy and Transportation Hub, Green Zone</p></div></li><li class="row" data-date="2026-11-14" data-start="14:00" data-end="15:00"><div class="tm"><b>14:00</b><i>15:00</i></div><div class="body"><h3>Scaling up offshore wind in Korea: policy priorities and partnerships</h3><p class="loc">Blue Zone, Korea Pavilion</p></div></li><li class="row" data-date="2026-11-14" data-start="16:30" data-end="17:30"><div class="tm"><b>16:30</b><i>17:30</i></div><div class="body"><h3>24/7 renewables</h3><p class="loc">Global Renewables Hub</p></div></li><li class="row" data-date="2026-11-14" data-start="16:45" data-end="18:15"><div class="tm"><b>16:45</b><i>18:15</i></div><div class="body"><h3>Electrification: from the 35 by 35 pledge to implementation</h3><p class="loc">Blue Zone, Side Event Room 6, Katip Celebi</p></div></li><li class="row" data-date="2026-11-14" data-start="18:00" data-end="20:00"><div class="tm"><b>18:00</b><i>20:00</i></div><div class="body"><h3>GRA Pavilion reception</h3><p class="loc">Global Renewables Hub</p></div></li></ul></section><section class="day" data-date="2026-11-16"><h2><span>MON 16 NOV</span><em>3 sessions</em></h2><ul class="rows"><li class="row" data-date="2026-11-16" data-start="11:30" data-end="13:00"><div class="tm"><b>11:30</b><i>13:00</i></div><div class="body"><h3>Joint event at the Italy Pavilion</h3><p class="loc">Blue Zone, Italy Pavilion</p></div></li><li class="row" data-date="2026-11-16" data-start="12:00" data-end="13:00"><div class="tm"><b>12:00</b><i>13:00</i></div><div class="body"><h3>Renewable energy for AI: green data centres for the twin transition</h3><p class="loc">Global Renewables Hub</p></div></li><li class="row" data-date="2026-11-16" data-start="16:30" data-end="17:30"><div class="tm"><b>16:30</b><i>17:30</i></div><div class="body"><h3>Electrification across the Mediterranean: T-MED as the delivery instrument of the Pact for the Mediterranean</h3><p class="loc">Blue Zone, Global Renewables Hub</p></div></li></ul></section><section class="day" data-date="2026-11-17"><h2><span>TUE 17 NOV</span><em>5 sessions</em></h2><ul class="rows"><li class="row" data-date="2026-11-17" data-start="10:30" data-end="11:30"><div class="tm"><b>10:30</b><i>11:30</i></div><div class="body"><h3>Delivering offshore wind at scale: ambition, action and ocean stewardship</h3><p class="loc">Global Renewables Hub</p></div></li><li class="row" data-date="2026-11-17" data-start="13:30" data-end="14:30"><div class="tm"><b>13:30</b><i>14:30</i></div><div class="body"><h3>Beyond 10 GW: accelerating the next phase of the SIDS energy transition</h3><p class="loc">Global Renewables Hub</p></div></li><li class="row" data-date="2026-11-17" data-start="15:00" data-end="16:00"><div class="tm"><b>15:00</b><i>16:00</i></div><div class="body"><h3>Mobilising climate finance for energy access: from national plans and pledges to bankable projects</h3><p class="loc">Global Renewables Hub</p></div></li><li class="row" data-date="2026-11-17" data-start="16:30" data-end="17:30"><div class="tm"><b>16:30</b><i>17:30</i></div><div class="body"><h3>Wired for Growth: electrifying Africa&#x27;s transport through policy, corridors and infrastructure</h3><p class="loc">Global Renewables Hub</p></div></li><li class="row" data-date="2026-11-17" data-start="18:00" data-end="20:00"><div class="tm"><b>18:00</b><i>20:00</i></div><div class="body"><h3>Wired for Growth reception: electrifying Africa&#x27;s transport</h3><p class="loc">Global Renewables Hub</p></div></li></ul></section><section class="day" data-date="2026-11-18"><h2><span>WED 18 NOV</span><em>4 sessions</em></h2><ul class="rows"><li class="row" data-date="2026-11-18" data-start="14:30" data-end="15:30"><div class="tm"><b>14:30</b><i>15:30</i></div><div class="body"><h3>L&#x27;IA au service de l&#x27;action climatique</h3><p class="loc">not in mail, Senegal Pavilion</p></div></li><li class="row" data-date="2026-11-18" data-start="16:30" data-end="17:30"><div class="tm"><b>16:30</b><i>17:30</i></div><div class="body"><h3>Regional Electrification Day</h3><p class="loc">Global Renewables Hub</p></div></li><li class="row" data-date="2026-11-18" data-start="16:45" data-end="18:15"><div class="tm"><b>16:45</b><i>18:15</i></div><div class="body"><h3>Official UNFCCC side event: implementing D-Grids</h3><p class="loc">Blue Zone, Room to be confirmed</p></div></li><li class="row" data-date="2026-11-18" data-start="18:00" data-end="20:00"><div class="tm"><b>18:00</b><i>20:00</i></div><div class="body"><h3>Regional Electrification Day reception</h3><p class="loc">Global Renewables Hub</p></div></li></ul></section><section class="day" data-date="2026-11-19"><h2><span>THU 19 NOV</span><em>2 sessions</em></h2><ul class="rows"><li class="row" data-date="2026-11-19" data-start="10:30" data-end="11:30"><div class="tm"><b>10:30</b><i>11:30</i></div><div class="body"><h3>From pledge to connection: how flexible distribution grids set the pace of electrification</h3><p class="loc">Global Renewables Hub</p></div></li><li class="row" data-date="2026-11-19" data-start="tbc" data-end="tbc"><div class="tm"><b>tbc</b><i></i></div><div class="body"><h3>D-Grids event at the IRENA Pavilion</h3><p class="loc">Blue Zone, IRENA Pavilion</p></div></li></ul></section>
+
+<section class="contact">
+  <h2>Contact</h2>
+  <p>WhatsApp is the fastest way to reach me during the conference. <a href="tel:+491721523311"><b>+49 172 1523311</b></a></p>
+  <div class="actions">
+    <a class="btn primary" href="https://wa.me/491721523311" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.02c-.24.68-1.4 1.3-1.94 1.35-.54.05-1.05.24-3.53-.74-2.99-1.18-4.87-4.28-5.02-4.48-.15-.2-1.2-1.6-1.2-3.05s.76-2.16 1.03-2.46c.27-.3.59-.37.79-.37h.57c.18.01.43-.07.67.51.24.58.83 2.03.9 2.18.07.15.11.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.38-.42.51-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.6-.07.16-.19.69-.8.87-1.08.18-.28.37-.23.62-.14.25.09 1.6.75 1.87.89.27.14.45.21.52.33.07.12.07.7-.17 1.38Z"/></svg>
+      WhatsApp
+    </a>
+    <a class="btn" href="simon.vcf" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Save contact
+    </a>
+  </div>
 </section>
 
 <footer>
-  Confirmed sessions and the Global Renewables Hub programme. Anything not confirmed is left out on purpose.
-  Times are local to Antalya. This page is updated by hand, so the stamp above is the truth of it.
+  The Global Renewables Hub programme and every session I am part of at COP31.
+  Updated by hand, so the stamp at the top is the truth of it.
 </footer>
 </main>
+
 <script id="data" type="application/json">[
  {
   "date": "2026-11-09",
   "start": "12:00",
   "end": "13:00",
   "title": "Official inauguration and opening ceremony of the Global Renewables Hub",
-  "location": "Global Renewables Hub",
-  "status": "Programme"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-09",
   "start": "15:00",
   "end": "16:30",
   "title": "Beyond carbon credits. What makes nature markets credible, investable and fair?",
-  "location": "Blue Zone, Side Event Room 6 (Katip Celebi)",
-  "status": "Invited"
+  "location": "Blue Zone, Side Event Room 6 (Katip Celebi)"
  },
  {
   "date": "2026-11-09",
   "start": "16:30",
   "end": "17:30",
   "title": "Unlocking the decade of electrification: end-use transformation and digitalisation, insights from WETO 2026",
-  "location": "Global Renewables Hub",
-  "status": "Programme"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-10",
   "start": "08:00",
   "end": "09:30",
   "title": "The Age of Electricity: transitioning energy, industry and transport",
-  "location": "Special Event Room 4 - Perge",
-  "status": "Confirmed"
+  "location": "Special Event Room 4 - Perge"
  },
  {
   "date": "2026-11-10",
   "start": "09:00",
   "end": "10:00",
   "title": "Transforming the power sector by 2030: unlocking power system flexibility, grids for a resilient energy transition",
-  "location": "Global Renewables Hub",
-  "status": "Programme"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-10",
   "start": "10:00",
   "end": "11:30",
   "title": "Scaling up adaptation and resilience implementation: success stories and lessons",
-  "location": "Blue Zone, Business Pavilion, ANFAS Antalya Expo Center",
-  "status": "Invited"
+  "location": "Blue Zone, Business Pavilion, ANFAS Antalya Expo Center"
  },
  {
   "date": "2026-11-10",
   "start": "10:30",
   "end": "11:30",
   "title": "Global Offshore Wind Alliance Global Stocktake",
-  "location": "Global Renewables Hub",
-  "status": "Confirmed"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-10",
   "start": "11:00",
   "end": "11:50",
   "title": "Deploying renewable energy in emerging economies: a place-based approach",
-  "location": "Blue Zone, All In Pavilion",
-  "status": "Invited"
+  "location": "Blue Zone, All In Pavilion"
  },
  {
   "date": "2026-11-10",
   "start": "11:30",
   "end": "13:00",
   "title": "Accelerating decarbonisation: strategic and regulatory levers, support mechanisms and partnerships",
-  "location": "Blue Zone, Morocco Pavilion",
-  "status": "Invited"
+  "location": "Blue Zone, Morocco Pavilion"
  },
  {
   "date": "2026-11-10",
   "start": "12:00",
   "end": "13:00",
   "title": "Powering the decade of electrification: renewable supply, grids and system flexibility, insights from WETO 2026",
-  "location": "Global Renewables Hub",
-  "status": "Programme"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-10",
   "start": "13:00",
   "end": "14:00",
   "title": "Saving the vanishing coast",
-  "location": "Blue Zone, Nigeria Pavilion, Antalya EXPO Center",
-  "status": "Invited"
+  "location": "Blue Zone, Nigeria Pavilion, Antalya EXPO Center"
  },
  {
   "date": "2026-11-10",
   "start": "13:00",
   "end": "15:00",
   "title": "Catalysing investment for mitigation action: connecting ideas, action and investment",
-  "location": "Special Event Room 6 (SPE 6)",
-  "status": "Invited"
+  "location": "Special Event Room 6 (SPE 6)"
  },
  {
   "date": "2026-11-10",
   "start": "13:30",
   "end": "15:00",
   "title": "Enabling transformation: how to build the power systems for an electrifying world",
-  "location": "Blue Zone, IETA Pavilion",
-  "status": "Invited"
+  "location": "Blue Zone, IETA Pavilion"
  },
  {
   "date": "2026-11-10",
   "start": "14:30",
   "end": "16:00",
   "title": "The changing climate reality: adapting and thriving amid disruption",
-  "location": "Venue on request",
-  "status": "Invited"
+  "location": "Venue on request"
  },
  {
   "date": "2026-11-10",
   "start": "16:00",
   "end": "16:45",
   "title": "D-Grids: interconnection, distribution grids, climate finance and the COP31 D-Grid Initiative",
-  "location": "Blue Zone, Turkish Pavilion, Hall 1",
-  "status": "Invited"
+  "location": "Blue Zone, Turkish Pavilion, Hall 1"
  },
  {
   "date": "2026-11-10",
   "start": "16:00",
   "end": "17:00",
   "title": "The infrastructure imperative: building the systems behind clean energy",
-  "location": "UNFCCC Pavilion, Blue Zone",
-  "status": "Confirmed"
+  "location": "UNFCCC Pavilion, Blue Zone"
  },
  {
   "date": "2026-11-10",
   "start": "18:00",
   "end": "23:00",
   "title": "Annual COP reception, renewables-based electrification",
-  "location": "Venue on request",
-  "status": "Invited"
+  "location": "Venue on request"
  },
  {
   "date": "2026-11-10",
   "start": "19:00",
   "end": "21:30",
   "title": "Powering prosperity: energy systems for resilient economies",
-  "location": "Venue on request",
-  "status": "Invited"
+  "location": "Venue on request"
  },
  {
   "date": "2026-11-11",
   "start": "12:00",
   "end": "13:30",
   "title": "Axis 1 Synthesis Roundtable: driving the transition across energy, industry and transport",
-  "location": "Blue Zone, Special Event Room 1, Uzungol",
-  "status": "Confirmed"
+  "location": "Blue Zone, Special Event Room 1, Uzungol"
  },
  {
   "date": "2026-11-11",
   "start": "12:00",
   "end": "13:00",
   "title": "Future-proofing grids for a renewable energy future",
-  "location": "Global Renewables Hub",
-  "status": "Programme"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-11",
   "start": "13:30",
   "end": "14:30",
   "title": "From megawatts to mega-flexibility: rethinking power for a renewable world",
-  "location": "Global Renewables Hub",
-  "status": "Programme"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-11",
   "start": "14:00",
   "end": "15:00",
   "title": "IEA special session on energy and AI, launch of the updated Energy and AI Observatory",
-  "location": "Blue Zone, IEA Pavilion, Stand A235",
-  "status": "Invited"
+  "location": "Blue Zone, IEA Pavilion, Stand A235"
  },
  {
   "date": "2026-11-11",
   "start": "15:00",
   "end": "16:15",
   "title": "From Data to Delivery: Strengthening Country Capacity for Climate Implementation",
-  "location": "not in mail, Room to be confirmed",
-  "status": "Invited"
+  "location": "not in mail, Room to be confirmed"
  },
  {
   "date": "2026-11-11",
   "start": "15:00",
   "end": "16:00",
   "title": "Powering electrification: hydropower for energy, water and resilience",
-  "location": "Global Renewables Hub",
-  "status": "Programme"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-12",
   "start": "10:30",
   "end": "11:30",
   "title": "Pacific leadership in the renewables revolution: advancing a 100% renewable Blue Pacific through investment and partnership",
-  "location": "Global Renewables Hub",
-  "status": "Programme"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-12",
   "start": "15:00",
   "end": "16:00",
   "title": "High-level dialogue on electrification: turning policy ambition into real-world impact",
-  "location": "Global Renewables Hub",
-  "status": "Programme"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-12",
   "start": "16:30",
   "end": "17:30",
   "title": "The IMO net-zero framework: securing a future for green fuels in global shipping",
-  "location": "Global Renewables Hub",
-  "status": "Programme"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-12",
   "start": "tbc",
   "end": "tbc",
   "title": "Roundtable on unlocking finance for electrified freight corridors",
-  "location": "not in mail, Room to be confirmed",
-  "status": "Invited"
+  "location": "not in mail, Room to be confirmed"
  },
  {
   "date": "2026-11-13",
   "start": "14:30",
   "end": "16:00",
   "title": "Scaling the energy transition through NDC 3.0 implementation and long-term low emission strategies",
-  "location": "Blue Zone, French Pavilion",
-  "status": "Confirmed"
+  "location": "Blue Zone, French Pavilion"
  },
  {
   "date": "2026-11-13",
   "start": "15:00",
   "end": "16:00",
   "title": "Launch of the Article 6 Network and the State of the Article 6 Carbon Market report",
-  "location": "Blue Zone, Coalition for Rainforest Nations pavilion",
-  "status": "Invited"
+  "location": "Blue Zone, Coalition for Rainforest Nations pavilion"
  },
  {
   "date": "2026-11-13",
   "start": "16:30",
   "end": "17:30",
   "title": "GWEC flagship event: powering the future begins with wind",
-  "location": "Global Renewables Hub",
-  "status": "Programme"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-13",
   "start": "18:00",
   "end": "20:00",
   "title": "GWEC Pavilion reception",
-  "location": "Global Renewables Hub",
-  "status": "Programme"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-14",
   "start": "08:30",
   "end": "10:30",
   "title": "BMUKN electrification event, Action Agenda progress and business perspectives",
-  "location": "Venue on request",
-  "status": "Invited"
+  "location": "Venue on request"
  },
  {
   "date": "2026-11-14",
   "start": "10:30",
   "end": "11:30",
   "title": "K-GX: from ambition to industrial transformation",
-  "location": "Blue Zone, Korea Pavilion",
-  "status": "Confirmed"
+  "location": "Blue Zone, Korea Pavilion"
  },
  {
   "date": "2026-11-14",
   "start": "10:30",
   "end": "11:30",
   "title": "Building the new power system: solutions and practices in grids, hydropower and energy storage",
-  "location": "Global Renewables Hub",
-  "status": "Confirmed"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-14",
   "start": "12:30",
   "end": "13:15",
   "title": "The Human Supply Chain for a Renewable Future: Recognising Renewable Energy Skills",
-  "location": "Energy and Transportation Hub, Green Zone",
-  "status": "Confirmed"
+  "location": "Energy and Transportation Hub, Green Zone"
  },
  {
   "date": "2026-11-14",
   "start": "14:00",
   "end": "15:00",
   "title": "Scaling up offshore wind in Korea: policy priorities and partnerships",
-  "location": "Blue Zone, Korea Pavilion",
-  "status": "Confirmed"
+  "location": "Blue Zone, Korea Pavilion"
  },
  {
   "date": "2026-11-14",
   "start": "16:30",
   "end": "17:30",
   "title": "24/7 renewables",
-  "location": "Global Renewables Hub",
-  "status": "Programme"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-14",
   "start": "16:45",
   "end": "18:15",
   "title": "Electrification: from the 35 by 35 pledge to implementation",
-  "location": "Blue Zone, Side Event Room 6, Katip Celebi",
-  "status": "Invited"
+  "location": "Blue Zone, Side Event Room 6, Katip Celebi"
  },
  {
   "date": "2026-11-14",
   "start": "18:00",
   "end": "20:00",
   "title": "GRA Pavilion reception",
-  "location": "Global Renewables Hub",
-  "status": "Programme"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-16",
   "start": "11:30",
   "end": "13:00",
   "title": "Joint event at the Italy Pavilion",
-  "location": "Blue Zone, Italy Pavilion",
-  "status": "Confirmed"
+  "location": "Blue Zone, Italy Pavilion"
  },
  {
   "date": "2026-11-16",
   "start": "12:00",
   "end": "13:00",
   "title": "Renewable energy for AI: green data centres for the twin transition",
-  "location": "Global Renewables Hub",
-  "status": "Programme"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-16",
   "start": "16:30",
   "end": "17:30",
   "title": "Electrification across the Mediterranean: T-MED as the delivery instrument of the Pact for the Mediterranean",
-  "location": "Blue Zone, Global Renewables Hub",
-  "status": "Confirmed"
+  "location": "Blue Zone, Global Renewables Hub"
  },
  {
   "date": "2026-11-17",
   "start": "10:30",
   "end": "11:30",
   "title": "Delivering offshore wind at scale: ambition, action and ocean stewardship",
-  "location": "Global Renewables Hub",
-  "status": "Confirmed"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-17",
   "start": "13:30",
   "end": "14:30",
   "title": "Beyond 10 GW: accelerating the next phase of the SIDS energy transition",
-  "location": "Global Renewables Hub",
-  "status": "Programme"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-17",
   "start": "15:00",
   "end": "16:00",
   "title": "Mobilising climate finance for energy access: from national plans and pledges to bankable projects",
-  "location": "Global Renewables Hub",
-  "status": "Confirmed"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-17",
   "start": "16:30",
   "end": "17:30",
   "title": "Wired for Growth: electrifying Africa's transport through policy, corridors and infrastructure",
-  "location": "Global Renewables Hub",
-  "status": "Confirmed"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-17",
   "start": "18:00",
   "end": "20:00",
   "title": "Wired for Growth reception: electrifying Africa's transport",
-  "location": "Global Renewables Hub",
-  "status": "Confirmed"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-18",
   "start": "14:30",
   "end": "15:30",
   "title": "L'IA au service de l'action climatique",
-  "location": "not in mail, Senegal Pavilion",
-  "status": "Invited"
+  "location": "not in mail, Senegal Pavilion"
  },
  {
   "date": "2026-11-18",
   "start": "16:30",
   "end": "17:30",
   "title": "Regional Electrification Day",
-  "location": "Global Renewables Hub",
-  "status": "Programme"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-18",
   "start": "16:45",
   "end": "18:15",
   "title": "Official UNFCCC side event: implementing D-Grids",
-  "location": "Blue Zone, Room to be confirmed",
-  "status": "Confirmed"
+  "location": "Blue Zone, Room to be confirmed"
  },
  {
   "date": "2026-11-18",
   "start": "18:00",
   "end": "20:00",
   "title": "Regional Electrification Day reception",
-  "location": "Global Renewables Hub",
-  "status": "Programme"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-19",
   "start": "10:30",
   "end": "11:30",
   "title": "From pledge to connection: how flexible distribution grids set the pace of electrification",
-  "location": "Global Renewables Hub",
-  "status": "Confirmed"
+  "location": "Global Renewables Hub"
  },
  {
   "date": "2026-11-19",
   "start": "tbc",
   "end": "tbc",
   "title": "D-Grids event at the IRENA Pavilion",
-  "location": "Blue Zone, IRENA Pavilion",
-  "status": "Invited"
+  "location": "Blue Zone, IRENA Pavilion"
  }
 ]</script>
 <script>
 const ROWS = JSON.parse(document.getElementById('data').textContent);
 const TZ = 'Europe/Istanbul';
-function antalyaNow() {
-  const parts = new Intl.DateTimeFormat('en-CA', {timeZone: TZ, year:'numeric',month:'2-digit',day:'2-digit',
+const MIN = t => /^\d{2}:\d{2}$/.test(t || '') ? (+t.slice(0,2))*60 + (+t.slice(3,5)) : null;
+
+function antalyaNow(){
+  const p = new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit',
     hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
-  const g = t => parts.find(p=>p.type===t).value;
-  return {date: `${g('year')}-${g('month')}-${g('day')}`, mins: (+g('hour'))*60 + (+g('minute'))};
+  const g = k => p.find(x=>x.type===k).value;
+  return {date:`${g('year')}-${g('month')}-${g('day')}`, mins:(+g('hour'))*60+(+g('minute'))};
 }
-function toMin(t) { if(!/^\d{2}:\d{2}$/.test(t||'')) return null; const [h,m]=t.split(':').map(Number); return h*60+m; }
-function render() {
+function dayLabel(iso, today){
+  if (iso === today) return 'Today';
+  return new Date(iso+'T12:00:00Z').toLocaleDateString('en-GB',
+    {weekday:'short',day:'numeric',month:'short',timeZone:'UTC'});
+}
+function key(r){ return `.row[data-date="${r.date}"][data-start="${r.start}"]`; }
+function paint(){
   const {date, mins} = antalyaNow();
-  const today = ROWS.filter(r=>r.date===date);
-  const running = today.find(r=>{const a=toMin(r.start), b=toMin(r.end); return a!=null&&b!=null&&mins>=a&&mins<b;});
-  const later = ROWS.filter(r=>{const a=toMin(r.start); return a!=null && (r.date>date || (r.date===date && a>mins));})[0];
-  const nowEl=document.getElementById('now'), nowV=document.getElementById('nowV'), nowM=document.getElementById('nowM');
-  if (running) { nowEl.classList.remove('idle'); nowV.textContent=running.title; nowM.textContent=`${running.start}-${running.end} · ${running.location}`; }
-  else { const nxt = today.find(r=>toMin(r.start)>mins);
-    nowV.textContent = nxt ? `Free until ${nxt.start}` : 'No session running';
-    nowM.textContent = nxt ? `Then ${nxt.title}` : ''; }
-  if (later) { document.getElementById('nextV').textContent=later.title;
-    const d=new Date(later.date+'T12:00:00Z');
-    const label=d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short',timeZone:'UTC'});
-    document.getElementById('nextM').textContent=`${later.date===date?'Today':label} ${later.start} · ${later.location}`; }
-  else { document.getElementById('nextV').textContent='Nothing further listed'; document.getElementById('nextM').textContent=''; }
+  document.querySelectorAll('.row').forEach(r=>r.classList.remove('is-now','is-next'));
+  document.querySelectorAll('.tag').forEach(t=>t.remove());
+
+  const running = ROWS.find(r=>{const a=MIN(r.start), b=MIN(r.end);
+    return r.date===date && a!=null && b!=null && mins>=a && mins<b;});
+  const later = ROWS.filter(r=>{const a=MIN(r.start); return a!=null && (r.date>date || (r.date===date && a>mins));})[0];
+
+  const mark = (row, cls, label) => {
+    if(!row) return;
+    row.classList.add(cls);
+    const t=document.createElement('span'); t.className='tag'; t.textContent=label;
+    row.querySelector('h3').appendChild(t);
+  };
+  if (running) mark(document.querySelector(key(running)),'is-now','Now');
+  if (later) mark(document.querySelector(key(later)),'is-next','Next');
+
+  const nowCell=document.getElementById('nowCell');
+  if (running){
+    nowCell.classList.remove('idle');
+    document.getElementById('nowV').textContent = running.title;
+    document.getElementById('nowM').textContent = `${running.start}-${running.end} · ${running.location}`;
+  } else {
+    nowCell.classList.add('idle');
+    const t = ROWS.filter(r=>r.date===date && MIN(r.start)>mins)[0];
+    document.getElementById('nowV').textContent = t ? `Free until ${t.start}` : 'No session running';
+    document.getElementById('nowM').textContent = t ? `Then ${t.title}` : 'Today is clear';
+  }
+  if (later){
+    document.getElementById('nextV').textContent = later.title;
+    document.getElementById('nextM').textContent = `${dayLabel(later.date,date)} ${later.start} · ${later.location}`;
+  } else {
+    document.getElementById('nextV').textContent = 'End of programme';
+    document.getElementById('nextM').textContent = '';
+  }
 }
-render(); setInterval(render, 60000);
+paint(); setInterval(paint, 60000);
 </script>
 </body>
 </html>
