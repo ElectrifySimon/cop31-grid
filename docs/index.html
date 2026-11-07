@@ -109,7 +109,6 @@ h3{margin:0;font-size:15px;line-height:1.33;font-weight:600;letter-spacing:-.005
 .contact p{margin:0 0 10px;font-size:12.5px;color:var(--ink2);line-height:1.45}
 .contact p b{color:var(--ink);font-weight:640;font-variant-numeric:tabular-nums}
 .actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;align-items:stretch}
-.btn.primary{grid-column:1 / -1}
 .btn svg.ic-btn{width:16px;height:16px}
 .btn{display:flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:0 10px;white-space:nowrap;
   border-radius:11px;text-decoration:none;font:640 13.5px/1 ui-sans-serif,system-ui,sans-serif;
@@ -124,6 +123,14 @@ footer .maplink a{display:inline-flex;align-items:center;gap:6px;color:var(--ink
 footer .maplink a:hover{color:var(--ink);border-bottom-color:var(--ink2)}
 footer .maplink svg{width:12px;height:12px;flex:none;opacity:.75}
 footer b{color:var(--ink2);font-weight:600}
+footer{margin-top:30px;padding-top:0;border-top:0;color:var(--faint)}
+.mapfoot{width:100%;min-height:48px;justify-content:center;gap:8px;text-decoration:none;
+  border:1px solid var(--line2);border-radius:12px;background:var(--card);color:var(--ink2);
+  font:640 13.5px/1 ui-sans-serif,system-ui,sans-serif}
+.mapfoot .ic-btn{width:16px;height:16px}
+.mapfoot .ext{display:inline-flex;opacity:.6}
+.mapfoot .ic-ext{width:13px;height:13px}
+.mapfoot:hover{color:var(--ink);border-color:var(--ink2)}
 @media (max-width:560px){
   section.day h2{top:calc(var(--barh,186px) + 2px)}
   .row{grid-template-columns:50px 1fr;gap:11px;padding-left:9px}
@@ -145,7 +152,7 @@ footer b{color:var(--ink2);font-weight:600}
   <div class="eyebrow">IRENA &middot; IITC &middot; Strategic Infrastructure</div>
   <h1>Simon Benmarraze</h1>
   <p class="sub">Where I am at COP31, Antalya, 9 to 20 November 2026</p>
-  <div class="facts"><span class="fact">All times UTC+3</span><span class="fact">54 sessions</span><span class="fact">Updated 7 Nov 2026, 15:22</span></div>
+  <div class="facts"><span class="fact">All times UTC+3</span><span class="fact">54 sessions</span><span class="fact">Updated 7 Nov 2026, 15:25</span></div>
 </header>
 
 <section class="contact">
@@ -159,10 +166,6 @@ footer b{color:var(--ink2);font-weight:600}
     <a class="btn" href="simon.vcf" download>
       <svg class="ic-btn" aria-hidden="true"><use href="#i-download-simple"></use></svg>
       Save contact
-    </a>
-    <a class="btn" href="https://unfccc.int/sites/default/files/resource/COP_31_Blue_Zone_MAP%20%281%29.pdf" target="_blank" rel="noopener">
-      <svg class="ic-btn" aria-hidden="true"><use href="#i-map-trifold"></use></svg>
-      Blue Zone map
     </a>
   </div>
 </section>
@@ -197,8 +200,11 @@ footer b{color:var(--ink2);font-weight:600}
 
 
 <footer>
-  <p>The Global Renewables Hub programme and every session I am part of at COP31.
-  Updated by hand, so the stamp at the top is the truth of it.</p>
+  <a class="btn mapfoot" href="https://unfccc.int/sites/default/files/resource/COP_31_Blue_Zone_MAP%20%281%29.pdf" target="_blank" rel="noopener">
+    <svg class="ic-btn" aria-hidden="true"><use href="#i-map-trifold"></use></svg>
+    Blue Zone map
+    <span class="ext"><svg class="ic-ext" aria-hidden="true"><use href="#i-arrow-square-out"></use></svg></span>
+  </a>
 </footer>
 </main>
 
