@@ -43,7 +43,7 @@ main{max-width:var(--max);margin:0 auto}
 a{color:inherit}
 .serif,h1,.who,.dayline .dn,.contact .num{
   font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif}
-.mono,.eyebrow,.facts,.dayline .dl,.dayline .dc,.idx,.tm,.btn,.mapfoot,.cell .k,.chipwa,.lbl,.colophon{
+.mono,.eyebrow,.dayline .dl,.dayline .dc,.idx,.tm,.btn,.mapfoot,.cell .k,.chipwa,.lbl,.colophon{
   font-family:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace}
 .skip{position:absolute;left:-9999px;top:0;z-index:60;background:var(--ink);color:var(--paper);
   padding:10px 14px;font-size:12px;text-decoration:none}
@@ -81,19 +81,13 @@ header{padding:30px 0 0}
 .qrmodal .btn{margin:0 14px 14px;width:calc(100% - 28px)}
 h1{font-weight:400;font-size:clamp(34px,9vw,54px);line-height:.95;letter-spacing:-.025em;
   margin:16px 0 0;text-wrap:balance}
-.sub{margin:12px 0 0;font-size:14px;line-height:1.45;color:var(--ink2);max-width:46ch}
-.facts{margin:16px 0 0;padding:9px 0;font-size:9px;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--faint);border-top:1px solid var(--rule2);border-bottom:1px solid var(--rule)}
+.sub{margin:14px 0 0;display:flex;align-items:center;gap:7px;font-size:14px;line-height:1.45;
+  color:var(--ink2);max-width:46ch}
+.sub svg{width:14px;height:14px;flex:none;color:var(--faint)}
+
 
 /* contact as a plan note */
-.contactline{margin:18px 0 0;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;
-  padding-bottom:10px;border-bottom:1px solid var(--rule)}
-.contactline .lbl{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
-.contactline .num{font-size:17px;letter-spacing:-.01em;text-decoration:none}
-.contactline .mini{font-family:ui-monospace,Menlo,monospace;font-size:9px;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--ink2);text-decoration:none;border-bottom:1px solid var(--rule2);
-  padding-bottom:1px}
-.contactline .mini:hover{color:var(--ink);border-color:var(--ink)}
+.sub{margin-bottom:2px}
 
 /* buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:40px;
@@ -112,7 +106,8 @@ h1{font-weight:400;font-size:clamp(34px,9vw,54px);line-height:.95;letter-spacing
 .live{position:sticky;top:0;z-index:30;background:var(--paper);
   margin:20px 0 0;padding:calc(8px + env(safe-area-inset-top,0px)) 0 0;
   border-top:2px solid var(--ink);border-bottom:1px solid var(--rule2)}
-.idbar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-bottom:9px}
+.idbar{display:none;align-items:center;justify-content:space-between;gap:10px;padding-bottom:9px}
+body.h1-gone .idbar{display:flex}
 .who{font-size:13.5px;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .idbar .tools{display:flex;align-items:center;gap:7px;flex:none}
 .chipwa{display:inline-flex;align-items:center;gap:6px;text-decoration:none;min-height:32px;padding:0 11px;
@@ -218,14 +213,8 @@ footer{margin:30px 0 0}
       <svg class="ic-btn" aria-hidden="true"><use href="#i-qr-code"></use></svg> QR
     </button></div>
   <h1>Simon Benmarraze</h1>
-  <p class="sub">Antalya, T&uuml;rkiye &middot; 9 to 20 November 2026</p>
-  <p class="facts">UTC+3 &middot; 55 sessions &middot; updated 7 Nov, 18:07</p>
+  <p class="sub"><svg class="ic" aria-hidden="true"><use href="#i-map-pin"></use></svg><span>Antalya, T&uuml;rkiye &middot; 9 to 20 November 2026</span></p>
 
-  <p class="contactline"><span class="lbl">WhatsApp</span>
-    <a class="num" href="tel:+491721523311">+49 172 1523311</a>
-    <a class="mini" href="https://wa.me/491721523311" rel="noopener">message</a>
-    <a class="mini" href="simon.vcf" download>contact card</a>
-  </p>
 </header>
 
 <div class="live" id="liveBar" aria-live="polite">
@@ -269,7 +258,7 @@ footer{margin:30px 0 0}
     <span class="left"><svg class="ic-btn" aria-hidden="true"><use href="#i-map-trifold"></use></svg> Blue Zone map, PDF</span>
     <span class="ext"><svg class="ic-ext" aria-hidden="true"><use href="#i-arrow-square-out"></use></svg></span>
   </a>
-  <p class="colophon"><span>COP31 &middot; Antalya</span><span>Sessions 55 &middot; sections 10</span></p>
+  <p class="colophon"><span>UTC+3 &middot; 55 sessions &middot; updated 7 Nov, 19:23</span></p>
 </footer>
 </main>
 
@@ -703,14 +692,15 @@ function paint(){
   } else {
     nowCell.classList.remove('live-now');
     const t = ROWS.filter(r=>r.date===date && MIN(r.start)>mins)[0];
-    document.getElementById('nowV').textContent = t ? `No session in progress. Next at ${t.start}` : 'No session in progress';
-    document.getElementById('nowM').textContent = t ? t.title : 'Nothing further today';
+    // the next cell already carries the time and title, so say it once
+    document.getElementById('nowV').textContent = 'No session in progress';
+    document.getElementById('nowM').textContent = '';
   }
   if (later){
     document.getElementById('nextV').textContent = later.title;
     document.getElementById('nextM').textContent = `${dayLabel(later.date,date)} · ${later.start}`;
   } else {
-    document.getElementById('nextV').textContent = 'End of programme';
+    document.getElementById('nextV').textContent = '';
     document.getElementById('nextM').textContent = '';
   }
 }
@@ -724,6 +714,16 @@ function bootTheme(){
     document.getElementById('themeBtn').setAttribute('aria-label', 'Switch to ' + (next==='dark'?'light':'dark') + ' theme');
   });
 }
+function bootWho(){
+  const who = document.querySelector('.idbar .who');
+  const h1 = document.querySelector('h1');
+  if (!who || !h1 || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(([e]) => {
+    const changed = document.body.classList.toggle('h1-gone', !e.isIntersecting);
+    if (changed && typeof measureBar === 'function') requestAnimationFrame(measureBar);
+  }, {rootMargin: '-8px 0px 0px 0px'}).observe(h1);
+}
+bootWho();
 function bootQR(){
   const dlg = document.getElementById('qrModal');
   const open = document.getElementById('qrOpen');
