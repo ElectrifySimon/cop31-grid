@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+
+# Nothing here is meant to be discovered. A page that is already indexed is
+# removed through the search console, not by editing this file.
