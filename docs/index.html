@@ -90,6 +90,11 @@ h3{margin:0;font-size:15px;line-height:1.33;font-weight:600;letter-spacing:-.005
 .btn:active{transform:translateY(1px)}
 .btn svg{width:17px;height:17px;flex:none}
 footer{margin-top:24px;color:var(--faint);font-size:12px;line-height:1.6}
+footer p{margin:0 0 10px}
+footer .maplink a{display:inline-flex;align-items:center;gap:6px;color:var(--ink2);font-weight:600;
+  text-decoration:none;border-bottom:1px solid var(--line2);padding-bottom:2px;font-size:12.5px}
+footer .maplink a:hover{color:var(--ink);border-bottom-color:var(--ink2)}
+footer .maplink svg{width:12px;height:12px;flex:none;opacity:.75}
 footer b{color:var(--ink2);font-weight:600}
 @media (max-width:560px){
   .strip{grid-template-columns:1fr}
@@ -112,7 +117,7 @@ footer b{color:var(--ink2);font-weight:600}
   <div class="eyebrow">IRENA &middot; IITC &middot; Strategic Infrastructure</div>
   <h1>Simon Benmarraze</h1>
   <p class="sub">Where I am at COP31, Antalya, 9 to 20 November 2026</p>
-  <div class="facts"><span class="fact">All times UTC+3</span><span class="fact">54 sessions</span><span class="fact">Updated 7 Nov 2026, 15:01</span></div>
+  <div class="facts"><span class="fact">All times UTC+3</span><span class="fact">54 sessions</span><span class="fact">Updated 7 Nov 2026, 15:08</span></div>
 </header>
 
 <section class="contact">
@@ -150,8 +155,12 @@ footer b{color:var(--ink2);font-weight:600}
 
 
 <footer>
-  The Global Renewables Hub programme and every session I am part of at COP31.
-  Updated by hand, so the stamp at the top is the truth of it.
+  <p>The Global Renewables Hub programme and every session I am part of at COP31.
+  Updated by hand, so the stamp at the top is the truth of it.</p>
+  <p class="maplink"><a href="https://unfccc.int/sites/default/files/resource/COP_31_Blue_Zone_MAP%20%281%29.pdf" target="_blank" rel="noopener">
+    Blue Zone map, PDF (UNFCCC)
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a></p>
 </footer>
 </main>
 
