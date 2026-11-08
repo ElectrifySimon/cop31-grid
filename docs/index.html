@@ -146,10 +146,7 @@ h1{font-weight:400;font-size:clamp(34px,9vw,54px);line-height:.95;letter-spacing
 .live{position:sticky;top:0;z-index:30;
   background:linear-gradient(180deg,#fbf8f1,#f4f1e9 78%);
   margin:22px 0 0;padding:calc(8px + env(safe-area-inset-top,0px)) 0 0;
-  border-top:2px solid var(--ink);border-bottom:1px solid var(--rule2);
-  box-shadow:0 2px 4px rgba(23,23,15,.06),0 14px 30px rgba(23,23,15,.12)}
-.live::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;
-  background:linear-gradient(90deg,var(--amber) 0%,var(--amber) 18%,var(--ink) 46%,var(--ink) 100%)}
+  box-shadow:0 6px 18px rgba(23,23,15,.07)}
 html[data-theme="dark"] .live{background:linear-gradient(180deg,#191811,#14140f 78%);
   box-shadow:0 10px 26px rgba(0,0,0,.5)}
 .idbar{display:none;align-items:center;justify-content:space-between;gap:10px;padding-bottom:9px}
@@ -167,16 +164,15 @@ body.h1-gone .idbar{display:flex}
 html[data-theme="dark"] .themebtn .ic-moon{display:none}
 html:not([data-theme="dark"]) .themebtn .ic-sun{display:none}
 
-.strip{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);
+.strip{display:grid;grid-template-columns:1fr 1fr;
   margin:8px 0 10px;border:1px solid rgba(23,23,15,.09);border-radius:16px;overflow:hidden;
   background:linear-gradient(180deg,#fffdf8,#f7f2e7);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 2px 4px rgba(23,23,15,.05),
     0 10px 24px rgba(23,23,15,.08),0 26px 50px -22px rgba(23,23,15,.18)}
 .cell{min-width:0;display:flex;flex-direction:column;gap:3px;padding:11px 13px 12px}
-.cell + .cell{border-left:1px solid var(--rule)}
-.strip.is-empty{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)}
-@media (min-width:760px){.strip.is-empty{grid-template-columns:auto minmax(0,1fr)}
-  .strip.is-empty #nowCell{max-width:260px}}
+.cell + .cell{border-left:1px solid rgba(23,23,15,.10)}
+.strip.is-empty{grid-template-columns:1fr 1fr}
+
 html[data-theme="dark"] .strip{border-color:rgba(242,239,230,.10);
   background:linear-gradient(180deg,#1e1d16,#191811);box-shadow:inset 0 1px 0 rgba(255,255,255,.05),
     0 10px 24px rgba(0,0,0,.4)}
@@ -185,14 +181,14 @@ html[data-theme="dark"] .strip{border-color:rgba(242,239,230,.10);
   display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
 .cell .m{font-size:10.5px;line-height:1.3;color:var(--ink2);
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-#nowCell.live-now{background:linear-gradient(165deg,#17624a,#0f5138 70%);color:var(--accent-ink);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.16)}
-#nowCell.live-now .k{color:color-mix(in srgb,var(--accent-ink) 78%,transparent)}
-#nowCell.live-now .m{color:color-mix(in srgb,var(--accent-ink) 88%,transparent)}
-#nextCell.has-next{background:linear-gradient(180deg,#fffcf3,#faeed6);
-  box-shadow:inset 3px 0 0 var(--amber),inset 0 1px 0 rgba(255,255,255,.85)}
-html[data-theme="dark"] #nextCell.has-next{background:linear-gradient(180deg,#2a2317,#221c12);
-  box-shadow:inset 3px 0 0 var(--amber)}
+#nowCell.live-now{box-shadow:inset 3px 0 0 var(--accent)}
+#nowCell.live-now .k{color:var(--accent)}
+#nowCell.live-now .v{color:var(--ink)}
+.cell .v{color:var(--ink)}
+.cell .m{color:var(--ink2)}
+#nextCell.has-next .m{color:var(--ink2)}
+#nextCell.has-next{box-shadow:inset 3px 0 0 var(--amber)}
+html[data-theme="dark"] #nextCell.has-next{box-shadow:inset 3px 0 0 var(--amber)}
 #nowCell .v{-webkit-line-clamp:2}
 #nextCell .v{-webkit-line-clamp:3;font-size:11.5px;line-height:1.25}
 /* below 360px a half-width cell cannot hold a real title, so the strip stacks */
@@ -377,7 +373,7 @@ footer{margin:30px 0 0}
     <span class="left"><svg class="ic-btn" aria-hidden="true"><use href="#i-map-trifold"></use></svg> Blue Zone map, PDF</span>
     <span class="ext"><svg class="ic-ext" aria-hidden="true"><use href="#i-arrow-square-out"></use></svg></span>
   </a>
-  <p class="colophon"><span>UTC+3 &middot; 55 sessions &middot; updated 8 Nov, 10:03</span></p>
+  <p class="colophon"><span>UTC+3 &middot; 55 sessions &middot; updated 8 Nov, 10:58</span></p>
 </footer>
 </main>
 
