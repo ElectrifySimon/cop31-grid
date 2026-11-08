@@ -7,12 +7,12 @@
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate">
 <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
 <meta name="referrer" content="no-referrer">
-<title>Simon Benmarraze &middot; COP31 participation</title>
+<title>Simon at COP31</title>
 <meta name="description" content="Participation of Simon Benmarraze at the thirty-first session of the Conference of the Parties (COP31), Antalya, T&uuml;rkiye, 9 to 20 November 2026. Session times, titles and venues.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%2317170f'/><text x='50' y='72' font-size='60' font-family='Georgia,serif' fill='%23f4f1e9' text-anchor='middle'>S</text></svg>">
 <style>
 :root{
-  --paper:#f4f1e9; --ink:#17170f; --ink2:#5f5b50; --faint:#8b8577;
+  --paper:#f4f1e9; --ink:#17170f; --ink2:#5f5b50; --faint:#6f695b;
   --rule:rgba(23,23,15,.16); --rule2:rgba(23,23,15,.42);
   --accent:#14563a; --accent-ink:#f4f1e9; --amber:#9a5a12;
   --max:760px;
@@ -43,7 +43,7 @@ main{max-width:var(--max);margin:0 auto}
 a{color:inherit}
 .serif,h1,.who,.dayline .dn,.contact .num{
   font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif}
-.mono,.eyebrow,.dayline .dl,.dayline .dc,.idx,.tm,.btn,.mapfoot,.cell .k,.chipwa,.lbl,.colophon{
+.mono,.dayline .dl,.dayline .dc,.idx,.tm,.btn,.mapfoot,.cell .k,.chipwa,.lbl,.colophon{
   font-family:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace}
 .skip{position:absolute;left:-9999px;top:0;z-index:60;background:var(--ink);color:var(--paper);
   padding:10px 14px;font-size:12px;text-decoration:none}
@@ -53,11 +53,46 @@ a{color:inherit}
   clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
-/* masthead */
-header{padding:30px 0 0}
-.eyebrow{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;
-  font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
-.eyebrow .ebl{text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* masthead: stylistic, no information devices (S1 sunrise) */
+body{background:
+  radial-gradient(1200px 620px at 12% -12%, #fdfaf3 0%, transparent 60%),
+  radial-gradient(900px 520px at 100% 0%, #efe7d7 0%, transparent 55%),
+  var(--paper)}
+html[data-theme="dark"] body{background:
+  radial-gradient(1100px 560px at 12% -10%, #1d1b13 0%, transparent 62%),
+  radial-gradient(820px 460px at 100% 0%, #191811 0%, transparent 58%),
+  var(--paper)}
+header{position:relative;padding:26px 0 2px;overflow:hidden}
+.s1sun{position:absolute;right:-34px;top:-26px;width:186px;height:186px;
+  color:rgba(154,100,18,.20);pointer-events:none}
+.s1sun svg{width:100%;height:100%;display:block}
+.s1disc{position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;
+  border-radius:50%;background:radial-gradient(circle at 42% 38%,#f7d9a0,#d99b3f 62%,#b9721c);
+  box-shadow:0 0 44px rgba(217,155,63,.45),inset 0 -6px 14px rgba(140,80,10,.35);opacity:.92}
+html[data-theme="dark"] .s1sun{color:rgba(217,164,95,.24)}
+html[data-theme="dark"] .s1disc{opacity:.66;
+  box-shadow:0 0 38px rgba(217,155,63,.28),inset 0 -6px 14px rgba(60,30,0,.5)}
+h1{position:relative;z-index:2;margin:22px 0 0;font-weight:400;letter-spacing:-.03em;line-height:.92}
+h1 em{display:block;font-style:italic;font-size:clamp(44px,12vw,68px);line-height:.92}
+h1 span{display:block;margin-top:6px;font-size:clamp(19px,5.2vw,26px);line-height:1;
+  letter-spacing:.02em;color:var(--ink2);font-style:normal}
+.sub{position:relative;z-index:2;margin:14px 0 0;display:flex;align-items:center;gap:8px;
+  font-size:9.5px;line-height:1.5;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);
+  white-space:nowrap}
+.sub span{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.sub svg{width:12px;height:12px;flex:none;color:var(--amber)}
+.s1tools{position:relative;z-index:2;display:flex;gap:10px;margin-top:16px}
+.gh{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-width:44px;min-height:44px;
+  padding:0 10px;border-radius:999px;cursor:pointer;
+  background:color-mix(in srgb,var(--paper) 74%,#ffffff);color:var(--ink2);
+  border:1px solid var(--rule);box-shadow:0 1px 2px rgba(23,23,15,.06);
+  transition:background 160ms ease-out,box-shadow 160ms ease-out,transform 160ms ease-out}
+.gh svg{width:16px;height:16px}
+.gh:active{transform:translateY(1px)}
+html[data-theme="dark"] .gh{background:rgba(242,239,230,.05);box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
+@media (hover:hover) and (pointer:fine){.gh:hover{box-shadow:0 2px 8px rgba(23,23,15,.10);border-color:var(--rule2)}}
+@media (min-width:760px){header{padding-top:34px}.s1sun{width:230px;height:230px;right:-30px;top:-34px}
+  .s1disc{width:88px;height:88px;margin:-44px 0 0 -44px}}
 .ebar{display:flex;align-items:center;gap:8px}
 .qrbtn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:30px;min-width:56px;padding:0 10px;
   background:transparent;color:var(--ink2);border:1px solid var(--rule2);border-radius:2px;
@@ -123,7 +158,7 @@ body.h1-gone .idbar{display:flex}
 html[data-theme="dark"] .themebtn .ic-moon{display:none}
 html:not([data-theme="dark"]) .themebtn .ic-sun{display:none}
 
-.strip{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--rule)}
+.strip{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);border-top:1px solid var(--rule)}
 .cell{padding:7px 10px 9px 0;min-width:0;display:flex;flex-direction:column;gap:3px}
 .cell + .cell{border-left:1px solid var(--rule);padding-left:12px}
 .cell .k{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
@@ -136,6 +171,14 @@ html:not([data-theme="dark"]) .themebtn .ic-sun{display:none}
 #nowCell.live-now .m{color:color-mix(in srgb,var(--accent-ink) 88%,transparent)}
 #nextCell.has-next{background:color-mix(in srgb,var(--amber) 9%,transparent);
   box-shadow:inset 3px 0 0 var(--amber)}
+#nowCell .v{-webkit-line-clamp:2}
+#nextCell .v{-webkit-line-clamp:3;font-size:11.5px;line-height:1.25}
+/* below 360px a half-width cell cannot hold a real title, so the strip stacks */
+@media (max-width:359px){
+  .sub{font-size:9px;letter-spacing:.06em}
+  .strip{grid-template-columns:1fr}
+  .cell + .cell{border-left:0;border-top:1px solid var(--rule);padding-left:0;padding-top:8px}
+}
 #nextCell.has-next .k{color:var(--amber)}
 
 /* days */
@@ -231,20 +274,18 @@ footer{margin:30px 0 0}
 <a class="skip" href="#programme">Skip to the programme</a>
 <main>
 <header>
-  <div class="eyebrow">
-    <button class="qrbtn themebtn" id="themeBtn" type="button" aria-label="Switch theme">
+  <div class="s1sun" aria-hidden="true"><svg viewBox='0 0 260 260' aria-hidden='true'><circle cx='130' cy='130' r='34' fill='none' stroke='currentColor' stroke-width='1.4'/><circle cx='130' cy='130' r='48' fill='none' stroke='currentColor' stroke-width='1.4'/><circle cx='130' cy='130' r='62' fill='none' stroke='currentColor' stroke-width='1.4'/><circle cx='130' cy='130' r='76' fill='none' stroke='currentColor' stroke-width='0.9'/><circle cx='130' cy='130' r='90' fill='none' stroke='currentColor' stroke-width='0.9'/><circle cx='130' cy='130' r='104' fill='none' stroke='currentColor' stroke-width='0.9'/><circle cx='130' cy='130' r='118' fill='none' stroke='currentColor' stroke-width='0.9'/></svg><span class="s1disc"></span></div>
+  <h1><em>Simon</em><span>at COP31</span></h1>
+  <p class="sub"><svg class="ic" aria-hidden="true"><use href="#i-map-pin"></use></svg><span>Antalya &middot; 9 to 20 November 2026</span></p>
+  <div class="s1tools">
+    <button class="gh themebtn" id="themeBtn" type="button" aria-label="Switch theme">
       <svg class="ic ic-moon" aria-hidden="true"><use href="#i-moon"></use></svg><svg class="ic ic-sun" aria-hidden="true"><use href="#i-sun"></use></svg>
     </button>
-    <span class="ebl">IRENA &middot; COP31</span>
-    <div class="ebar">
-      <a class="qrbtn icbtn" href="mailto:sbenmarraze@irena.org?subject=COP31%20Antalya%3A%20connecting%20with%20Simon%20Benmarraze&body=Dear%20Simon%2C%0A%0AI%20would%20like%20to%20connect%20with%20you%20at%20COP31%20in%20Antalya.%20I%20am%20at%20the%20same%20conference%20and%20would%20welcome%20a%20conversation.%0A%0AA%20little%20about%20me%3A%0AName%3A%0AOrganisation%3A%0AMobile%20or%20WhatsApp%3A%0A%0AYour%20details%2C%20for%20reference%3A%0ASimon%20Benmarraze%0AHead%20of%20Unit%2C%20Strategic%20Infrastructure%0AInternational%20Renewable%20Energy%20Agency%20%28IRENA%29%0A%2B49%20172%201523311%0Asbenmarraze%40irena.org%0A%0AWith%20best%20regards%2C%0A" aria-label="Email Simon Benmarraze"><svg class="ic-btn" aria-hidden="true"><use href="#i-envelope-simple"></use></svg></a>
-      <button class="qrbtn" id="qrOpen" type="button" aria-haspopup="dialog">
-        <svg class="ic-btn" aria-hidden="true"><use href="#i-qr-code"></use></svg> QR
-      </button>
-    </div></div>
-  <h1>Simon Benmarraze</h1>
-  <p class="sub"><svg class="ic" aria-hidden="true"><use href="#i-map-pin"></use></svg><span>Antalya, T&uuml;rkiye &middot; 9 to 20 November 2026</span></p>
-
+    <a class="gh" href="mailto:sbenmarraze@irena.org?subject=COP31%20Antalya%3A%20connecting%20with%20Simon%20Benmarraze&body=Dear%20Simon%2C%0A%0AI%20would%20like%20to%20connect%20with%20you%20at%20COP31%20in%20Antalya.%20I%20am%20at%20the%20same%20conference%20and%20would%20welcome%20a%20conversation.%0A%0AA%20little%20about%20me%3A%0AName%3A%0AOrganisation%3A%0AMobile%20or%20WhatsApp%3A%0A%0AYour%20details%2C%20for%20reference%3A%0ASimon%20Benmarraze%0AHead%20of%20Unit%2C%20Strategic%20Infrastructure%0AInternational%20Renewable%20Energy%20Agency%20%28IRENA%29%0A%2B49%20172%201523311%0Asbenmarraze%40irena.org%0A%0AWith%20best%20regards%2C%0A" aria-label="Email Simon Benmarraze"><svg class="ic" aria-hidden="true"><use href="#i-envelope-simple"></use></svg></a>
+    <button class="gh" id="qrOpen" type="button" aria-haspopup="dialog" aria-label="Open the contact card">
+      <svg class="ic" aria-hidden="true"><use href="#i-qr-code"></use></svg>
+    </button>
+  </div>
 </header>
 
 <div class="live" id="liveBar" aria-live="polite">
@@ -288,7 +329,7 @@ footer{margin:30px 0 0}
     <span class="left"><svg class="ic-btn" aria-hidden="true"><use href="#i-map-trifold"></use></svg> Blue Zone map, PDF</span>
     <span class="ext"><svg class="ic-ext" aria-hidden="true"><use href="#i-arrow-square-out"></use></svg></span>
   </a>
-  <p class="colophon"><span>UTC+3 &middot; 55 sessions &middot; updated 7 Nov, 23:23</span></p>
+  <p class="colophon"><span>UTC+3 &middot; 55 sessions &middot; updated 8 Nov, 08:41</span></p>
 </footer>
 </main>
 
@@ -726,10 +767,13 @@ function paint(){
     document.getElementById('nowV').textContent = 'No session in progress';
     document.getElementById('nowM').textContent = '';
   }
+  const nextCell = document.getElementById('nextCell');
   if (later){
+    nextCell.classList.add('has-next');
     document.getElementById('nextV').textContent = later.title;
     document.getElementById('nextM').textContent = `${dayLabel(later.date,date)} · ${later.start}`;
   } else {
+    nextCell.classList.remove('has-next');
     document.getElementById('nextV').textContent = '';
     document.getElementById('nextM').textContent = '';
   }
