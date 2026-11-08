@@ -163,7 +163,7 @@ html:not([data-theme="dark"]) .themebtn .ic-sun{display:none}
   background:#fdfbf5;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 2px 4px rgba(23,23,15,.05),
     0 10px 24px rgba(23,23,15,.08),0 26px 50px -22px rgba(23,23,15,.18)}
-.cell{min-width:0;display:flex;flex-direction:column;gap:3px;padding:11px 13px 12px}
+.cell{min-width:0;display:flex;flex-direction:column;gap:2px;padding:9px 12px 10px}
 .cell + .cell{border-left:1px solid rgba(23,23,15,.10)}
 .strip.is-empty{grid-template-columns:1fr 1fr}
 
@@ -173,6 +173,11 @@ html[data-theme="dark"] .strip{border-color:rgba(242,239,230,.10);
 .cell .k{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
 .cell .v{font-size:12.5px;line-height:1.3;font-weight:540;
   display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.cell .loc{display:none;align-items:flex-start;gap:5px;margin-top:3px;font-size:10px;line-height:1.4;
+  color:var(--faint);min-width:0}
+.cell .loc.on{display:flex}
+.cell .loc svg{width:10px;height:10px;flex:none;margin-top:2px;opacity:.85}
+.cell .loc span{min-width:0;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
 .cell .m{font-size:10.5px;line-height:1.3;color:var(--ink2);
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #nowCell.live-now{box-shadow:inset 3px 0 0 var(--accent)}
@@ -336,14 +341,16 @@ footer{margin:30px 0 0}
   </div>
   <div class="strip">
     <div class="cell" id="nowCell">
-      <span class="k">Current session</span>
+      <span class="k">Current</span>
       <span class="v" id="nowV">No session in progress</span>
       <span class="m" id="nowM"></span>
+      <span class="loc" id="nowLoc"></span>
     </div>
     <div class="cell" id="nextCell">
-      <span class="k">Next session</span>
+      <span class="k">Next</span>
       <span class="v" id="nextV">&nbsp;</span>
       <span class="m" id="nextM"></span>
+      <span class="loc" id="nextLoc"></span>
     </div>
   </div>
 </div>
@@ -368,7 +375,7 @@ footer{margin:30px 0 0}
     <span class="left"><svg class="ic-btn" aria-hidden="true"><use href="#i-map-trifold"></use></svg> Blue Zone map, PDF</span>
     <span class="ext"><svg class="ic-ext" aria-hidden="true"><use href="#i-arrow-square-out"></use></svg></span>
   </a>
-  <p class="colophon"><span>UTC+3 &middot; 55 sessions &middot; updated 8 Nov, 11:17</span></p>
+  <p class="colophon"><span>UTC+3 &middot; 55 sessions &middot; updated 8 Nov, 17:06</span></p>
 </footer>
 </main>
 
@@ -760,6 +767,7 @@ footer{margin:30px 0 0}
  }
 ]</script>
 <script>
+const PIN = '<svg aria-hidden="true"><use href="#i-map-pin"></use></svg>';
 const ROWS = JSON.parse(document.getElementById('data').textContent);
 const TZ = 'Europe/Istanbul';
 const MIN = t => /^\d{2}:\d{2}$/.test(t || '') ? (+t.slice(0,2))*60 + (+t.slice(3,5)) : null;
@@ -800,23 +808,29 @@ function paint(){
   if (running){
     nowCell.classList.add('live-now');
     document.getElementById('nowV').textContent = running.title;
-    document.getElementById('nowM').textContent = `${running.start}-${running.end} · ${running.location}`;
+    document.getElementById('nowM').textContent = `${running.start}-${running.end}`;
+    document.getElementById('nowLoc').innerHTML = PIN + `<span>${running.location || ''}</span>`;
+    document.getElementById('nowLoc').classList.toggle('on', !!running.location);
   } else {
     nowCell.classList.remove('live-now');
     const t = ROWS.filter(r=>r.date===date && MIN(r.start)>mins)[0];
     // the next cell already carries the time and title, so say it once
     document.getElementById('nowV').textContent = 'No session in progress';
     document.getElementById('nowM').textContent = '';
+    document.getElementById('nowLoc').classList.remove('on');
   }
   const nextCell = document.getElementById('nextCell');
   if (later){
     nextCell.classList.add('has-next');
     document.getElementById('nextV').textContent = later.title;
     document.getElementById('nextM').textContent = `${dayLabel(later.date,date)} · ${later.start}`;
+    document.getElementById('nextLoc').innerHTML = PIN + `<span>${later.location || ''}</span>`;
+    document.getElementById('nextLoc').classList.toggle('on', !!later.location);
   } else {
     nextCell.classList.remove('has-next');
     document.getElementById('nextV').textContent = '';
     document.getElementById('nextM').textContent = '';
+    document.getElementById('nextLoc').classList.remove('on');
   }
 }
 function bootTheme(){
