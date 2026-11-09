@@ -1,2 +1,5 @@
-preview.png
+/*
+!/.gitignore
+!/README.md
+!/docs/
 .DS_Store

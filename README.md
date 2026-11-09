@@ -2,7 +2,7 @@
 
 Where I am during COP31, Antalya, 9 to 20 November 2026.
 
-A single page: day, time, title, location, and whether a session is confirmed or part of the Global Renewables Hub programme. All times UTC+3.
+A single page: day, time, title and location. All times UTC+3.
 
 Published at https://electrifysimon.github.io/cop31-grid/
 
