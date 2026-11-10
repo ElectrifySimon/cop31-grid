@@ -29,6 +29,13 @@
  },
  {
   "date": "2026-11-10",
+  "start": "08:00",
+  "end": "18:00",
+  "title": "Climate Action Innovation Zone and Sustainable Innovation Forum",
+  "location": "Venue on request"
+ },
+ {
+  "date": "2026-11-10",
   "start": "09:00",
   "end": "10:00",
   "title": "Transforming the power sector by 2030: unlocking power system flexibility, grids for a resilient energy transition",
@@ -229,13 +236,6 @@
   "end": "16:00",
   "title": "Scaling the energy transition through NDC 3.0 implementation and long-term low emission strategies",
   "location": "Blue Zone, French Pavilion"
- },
- {
-  "date": "2026-11-13",
-  "start": "15:00",
-  "end": "16:00",
-  "title": "Launch of the Article 6 Network and the State of the Article 6 Carbon Market report",
-  "location": "Blue Zone, Coalition for Rainforest Nations pavilion"
  },
  {
   "date": "2026-11-13",
